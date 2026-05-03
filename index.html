@@ -8,11 +8,28 @@
 
 <div class="app">
 
-    <div id="startScreen" class="card">
+    <div id="startScreen" class="card hero-card">
+        <div class="badge-pill">Interactive STEM Learning</div>
         <h1>⚛️ Physics Learning App</h1>
-        <p class="subtitle">Learn physics with 3D-style animations, quizzes, XP, levels, and badges.</p>
+        <p class="tagline">A visual physics course with animations, quizzes, levels, badges, and saved progress.</p>
 
-        <input id="studentName" placeholder="Enter your name">
+        <div class="missionBox">
+            <h2>What students learn</h2>
+            <p>
+                Students build a foundation in physics by completing guided lessons,
+                watching 3D-style visual scenes, answering quiz questions, and unlocking
+                new topics step by step.
+            </p>
+        </div>
+
+        <div class="featureGrid">
+            <div>🎬 Animated lessons</div>
+            <div>🏆 Badges</div>
+            <div>📊 Progress report</div>
+            <div>🔒 Guided path</div>
+        </div>
+
+        <input id="studentName" placeholder="Enter student name">
         <br>
         <button onclick="enterApp()">Start Learning</button>
     </div>
@@ -21,25 +38,46 @@
         <h1>⚛️ Physics Learning App</h1>
         <p id="welcomeText" class="subtitle"></p>
 
+        <div class="card dashboard">
+            <h2>Student Dashboard</h2>
+            <div id="levelBox">Level: 1 | XP: 0 / 100</div>
+            <p id="completedBox">Lessons Completed: 0</p>
+            <p id="badgeCountBox">Badges Earned: 0</p>
+        </div>
+
+        <div class="card reportCard">
+            <h2>📊 Progress Report</h2>
+            <p id="reportName">Student: Student</p>
+            <p id="reportLevel">Level: 1</p>
+            <p id="reportXP">XP: 0 / 100</p>
+            <p id="reportLessons">Course Progress: 0%</p>
+            <p id="reportBadges">Badges: 0</p>
+            <p id="reportMessage">Start Gravity to begin your learning path.</p>
+        </div>
+
         <div class="card">
-            <h2>Lesson Menu</h2>
+            <h2>Learning Path</h2>
+            <p class="smallText">Complete each lesson with a perfect score to unlock the next topic.</p>
 
             <div class="menu">
-                <button onclick="startLesson('gravity')">Gravity</button>
-                <button onclick="startLesson('force')">Force</button>
-                <button onclick="startLesson('energy')">Energy</button>
-                <button onclick="startLesson('motion')">Motion</button>
-                <button onclick="startLesson('friction')">Friction</button>
-                <button onclick="startLesson('speed')">Speed</button>
-                <button onclick="startLesson('electricity')">Electricity</button>
-                <button onclick="startLesson('magnetism')">Magnetism</button>
-                <button onclick="startLesson('acceleration')">Acceleration</button>
-                <button onclick="startLesson('mass')">Mass</button>
+                <button id="gravityBtn" onclick="startLesson('gravity')">Gravity</button>
+                <button id="forceBtn" onclick="startLesson('force')">Force</button>
+                <button id="energyBtn" onclick="startLesson('energy')">Energy</button>
+                <button id="motionBtn" onclick="startLesson('motion')">Motion</button>
+                <button id="frictionBtn" onclick="startLesson('friction')">Friction</button>
+                <button id="speedBtn" onclick="startLesson('speed')">Speed</button>
+                <button id="electricityBtn" onclick="startLesson('electricity')">Electricity</button>
+                <button id="magnetismBtn" onclick="startLesson('magnetism')">Magnetism</button>
+                <button id="accelerationBtn" onclick="startLesson('acceleration')">Acceleration</button>
+                <button id="massBtn" onclick="startLesson('mass')">Mass</button>
             </div>
 
-            <button onclick="resetProgress()">Reset Progress</button>
+            <h2>Review Mode</h2>
+            <p class="smallText">Practice completed lessons. Review mode does not change XP, badges, or unlocks.</p>
+            <div id="reviewMenu" class="menu"></div>
 
-            <div id="levelBox">Level: 1 | XP: 0 / 100</div>
+            <button class="resetButton" onclick="resetProgress()">Reset Progress</button>
+
             <div id="output"></div>
 
             <div id="progressContainer">
@@ -65,6 +103,8 @@
                 <p id="badges">No badges yet.</p>
             </div>
         </div>
+
+        <p class="footerNote">Physics Learning App MVP • Built for visual STEM learning</p>
     </div>
 
 </div>
