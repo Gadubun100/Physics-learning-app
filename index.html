@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Physics Learning App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <div id="startScreen" class="card">
+        <h1>⚛️ Physics Learning App</h1>
+        <p class="subtitle">Learn physics with 3D-style animations, quizzes, XP, levels, and badges.</p>
+
+        <input id="studentName" placeholder="Enter your name">
+        <br>
+        <button onclick="enterApp()">Start Learning</button>
+    </div>
+
+    <div id="mainApp" style="display: none;">
+        <h1>⚛️ Physics Learning App</h1>
+        <p id="welcomeText" class="subtitle"></p>
+
+        <div class="card">
+            <h2>Lesson Menu</h2>
+
+            <div class="menu">
+                <button onclick="startLesson('gravity')">Gravity</button>
+                <button onclick="startLesson('force')">Force</button>
+                <button onclick="startLesson('energy')">Energy</button>
+                <button onclick="startLesson('motion')">Motion</button>
+                <button onclick="startLesson('friction')">Friction</button>
+                <button onclick="startLesson('speed')">Speed</button>
+                <button onclick="startLesson('electricity')">Electricity</button>
+                <button onclick="startLesson('magnetism')">Magnetism</button>
+                <button onclick="startLesson('acceleration')">Acceleration</button>
+                <button onclick="startLesson('mass')">Mass</button>
+            </div>
+
+            <button onclick="resetProgress()">Reset Progress</button>
+
+            <div id="levelBox">Level: 1 | XP: 0 / 100</div>
+            <div id="output"></div>
+
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="progressText">Progress: 0%</p>
+
+            <div id="animationBox">
+                <div id="sceneLight"></div>
+                <div id="backWall"></div>
+                <div id="floor"></div>
+                <div id="track"></div>
+                <div id="ball"></div>
+                <div id="sceneLabel"></div>
+            </div>
+
+            <div id="quiz"></div>
+            <div id="scoreBox">Score: 0</div>
+
+            <div id="badgeBox">
+                <h3>Badges Earned</h3>
+                <p id="badges">No badges yet.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
