@@ -9,7 +9,23 @@ let xp = localStorage.getItem("xp") ? parseInt(localStorage.getItem("xp")) : 0;
 let earnedBadges = localStorage.getItem("badges") ? JSON.parse(localStorage.getItem("badges")) : [];
 let completedLessons = localStorage.getItem("completedLessons") ? JSON.parse(localStorage.getItem("completedLessons")) : [];
 
-const lessonOrder = ["gravity", "force", "energy", "motion", "friction", "speed", "electricity", "magnetism", "acceleration", "mass"];
+const lessonOrder = [
+    "gravity",
+    "force",
+    "energy",
+    "motion",
+    "friction",
+    "speed",
+    "electricity",
+    "magnetism",
+    "acceleration",
+    "mass",
+    "heat",
+    "waves",
+    "circuits",
+    "light",
+    "pressure"
+];
 
 const lessons = {
     gravity: {
@@ -26,6 +42,7 @@ const lessons = {
             ["Which object is affected by gravity?", "A falling apple", "Only light", "Only magnets", "Only electricity", "Objects with mass feel gravity."]
         ]
     },
+
     force: {
         title: "A force is a push or pull.",
         intro: "In this lesson, you will learn how pushes and pulls can make objects move, stop, or change direction.",
@@ -40,6 +57,7 @@ const lessons = {
             ["Kicking a ball uses what?", "Force", "Silence", "Color", "Magnetism only", "Kicking applies force."]
         ]
     },
+
     energy: {
         title: "Energy is the ability to do work or cause change.",
         intro: "In this lesson, you will learn that energy helps objects move, light shine, and changes happen.",
@@ -54,6 +72,7 @@ const lessons = {
             ["Light is a form of what?", "Energy", "Weight", "Mass only", "Speed only", "Light is energy."]
         ]
     },
+
     motion: {
         title: "Motion means changing position.",
         intro: "In this lesson, you will learn that motion happens when an object changes position over time.",
@@ -68,6 +87,7 @@ const lessons = {
             ["If something moves, it changes what?", "Position", "Name", "Color", "Shape only", "Movement changes position."]
         ]
     },
+
     friction: {
         title: "Friction slows objects when surfaces rub.",
         intro: "In this lesson, you will learn how friction slows motion when surfaces touch and rub together.",
@@ -82,6 +102,7 @@ const lessons = {
             ["Brakes use what to slow wheels?", "Friction", "Gravity disappearing", "Light", "Magnetism only", "Brakes use friction."]
         ]
     },
+
     speed: {
         title: "Speed tells how fast something moves.",
         intro: "In this lesson, you will learn that speed tells how fast an object moves over time.",
@@ -96,6 +117,7 @@ const lessons = {
             ["Slow movement means what?", "Low speed", "No mass", "No gravity", "No force", "Slow movement means low speed."]
         ]
     },
+
     electricity: {
         title: "Electricity is the movement of electric charge.",
         intro: "In this lesson, you will learn that electricity powers lights, devices, and many tools we use every day.",
@@ -110,6 +132,7 @@ const lessons = {
             ["Lightning is a form of what?", "Electricity", "Mass", "Friction", "Sound only", "Lightning is electricity."]
         ]
     },
+
     magnetism: {
         title: "Magnetism is a force that can attract or repel.",
         intro: "In this lesson, you will learn how magnets pull some materials closer and push others away.",
@@ -124,6 +147,7 @@ const lessons = {
             ["Same magnetic poles do what?", "Repel", "Melt", "Combine forever", "Turn off gravity", "Same poles repel."]
         ]
     },
+
     acceleration: {
         title: "Acceleration means speed is changing.",
         intro: "In this lesson, you will learn that acceleration happens when speed or direction changes.",
@@ -138,6 +162,7 @@ const lessons = {
             ["Which shows acceleration?", "Bike speeding up", "Book resting", "Rock sitting still", "Lamp turned off", "A bike speeding up is accelerating."]
         ]
     },
+
     mass: {
         title: "Mass is the amount of matter in an object.",
         intro: "In this lesson, you will learn that mass describes how much matter something has.",
@@ -150,6 +175,81 @@ const lessons = {
             ["Mass is measured in what?", "Kilograms", "Seconds", "Meters only", "Degrees", "Mass is often measured in kilograms."],
             ["More mass can make objects harder to what?", "Move", "See", "Name", "Color", "More mass can make objects harder to move."],
             ["A bowling ball has more mass than what?", "Tennis ball", "Truck", "Car", "Elephant", "A bowling ball has more mass than a tennis ball."]
+        ]
+    },
+
+    heat: {
+        title: "Heat is energy moving from warmer objects to cooler objects.",
+        intro: "In this lesson, you will learn that heat is thermal energy moving from hot things to cooler things.",
+        anim: "energyAnim",
+        label: "Heat = moving thermal energy",
+        badge: "Heat Hero 🔥",
+        questions: [
+            ["Heat usually moves from hot to what?", "Cold", "Louder", "Heavier", "Darker", "Heat moves from warmer objects to cooler objects."],
+            ["Heat is a type of what?", "Energy", "Mass", "Friction", "Magnet", "Heat is thermal energy."],
+            ["What can heat do to ice?", "Melt it", "Make it heavier", "Turn it magnetic", "Stop gravity", "Heat can melt ice."],
+            ["A stove gives off what?", "Heat", "Gravity only", "Mass only", "Friction only", "A stove gives off heat energy."],
+            ["When water gets hot, its particles move how?", "Faster", "Slower only", "Never move", "Disappear", "Heating makes particles move faster."]
+        ]
+    },
+
+    waves: {
+        title: "Waves carry energy from one place to another.",
+        intro: "In this lesson, you will learn that waves move energy through matter or space.",
+        anim: "motionAnim",
+        label: "Waves carry energy",
+        badge: "Wave Rider 🌊",
+        questions: [
+            ["What do waves carry?", "Energy", "Only color", "Only mass", "Only friction", "Waves carry energy."],
+            ["Sound travels as what?", "Waves", "Bricks", "Magnets only", "Stillness", "Sound travels in waves."],
+            ["Ocean waves move energy through what?", "Water", "Metal only", "Empty paper", "Stone only", "Ocean waves move energy through water."],
+            ["Light can behave like a what?", "Wave", "Chair", "Heavy rock", "Door", "Light can behave like a wave."],
+            ["A wave going up and down shows what?", "Vibration", "No motion", "No energy", "No movement", "Many waves come from vibrations."]
+        ]
+    },
+
+    circuits: {
+        title: "A circuit is a path that electricity follows.",
+        intro: "In this lesson, you will learn that electricity needs a complete path called a circuit.",
+        anim: "electricityAnim",
+        label: "Circuits guide electricity",
+        badge: "Circuit Builder 🔌",
+        questions: [
+            ["A circuit is a path for what?", "Electricity", "Gravity", "Friction", "Mass", "A circuit is a path for electricity."],
+            ["A broken circuit is called what?", "Open circuit", "Heavy circuit", "Fast circuit", "Cold circuit", "An open circuit has a break."],
+            ["A complete circuit allows electricity to what?", "Flow", "Disappear", "Freeze", "Become mass", "Electricity flows through a complete circuit."],
+            ["A switch can open or close a what?", "Circuit", "Magnet", "Wave only", "Planet", "A switch controls a circuit."],
+            ["What gives energy in many simple circuits?", "Battery", "Rock", "String", "Paper", "A battery provides electrical energy."]
+        ]
+    },
+
+    light: {
+        title: "Light is energy that helps us see.",
+        intro: "In this lesson, you will learn that light is energy and can travel in waves.",
+        anim: "electricityAnim",
+        label: "Light is energy",
+        badge: "Light Explorer 💡",
+        questions: [
+            ["Light helps us do what?", "See", "Become heavier", "Stop motion", "Remove energy", "Light helps us see."],
+            ["Light is a form of what?", "Energy", "Friction", "Mass only", "Pressure only", "Light is a form of energy."],
+            ["Light travels very what?", "Fast", "Slow always", "Heavy", "Still", "Light travels very fast."],
+            ["A mirror does what to light?", "Reflects it", "Eats it", "Freezes it", "Makes it mass", "A mirror reflects light."],
+            ["The Sun gives us light and what?", "Heat", "Friction only", "Magnetism only", "Mass only", "The Sun gives light and heat."]
+        ]
+    },
+
+    pressure: {
+        title: "Pressure is force spread over an area.",
+        intro: "In this lesson, you will learn that pressure depends on force and the area where the force acts.",
+        anim: "massAnim",
+        label: "Pressure = force over area",
+        badge: "Pressure Pro 🌬️",
+        questions: [
+            ["Pressure depends on force and what?", "Area", "Color", "Sound", "Time only", "Pressure depends on force and area."],
+            ["Sharp objects can create high what?", "Pressure", "Light", "Silence", "Electricity only", "Small area can create high pressure."],
+            ["Pressure is force spread over what?", "Area", "Color", "Heat only", "Magnet", "Pressure is force over area."],
+            ["A heavy object on a small area creates what?", "High pressure", "No pressure", "Only light", "No force", "More force on less area means higher pressure."],
+            ["Air pressure comes from what?", "Air pushing", "Color moving", "Light freezing", "Mass disappearing", "Air pressure comes from air pushing on surfaces."]
         ]
     }
 };
@@ -411,21 +511,26 @@ function isLessonUnlocked(lesson) {
 }
 
 function updateLessonButtons() {
+    let lessonMenu = document.getElementById("lessonMenu");
+    let html = "";
+
     for (let i = 0; i < lessonOrder.length; i++) {
         let lesson = lessonOrder[i];
-        let button = document.getElementById(lesson + "Btn");
+        let className = "";
+        let label = getLessonDisplayName(lesson);
 
         if (completedLessons.includes(lesson)) {
-            button.className = "completed";
-            button.innerHTML = getLessonDisplayName(lesson) + " ✅";
-        } else if (isLessonUnlocked(lesson)) {
-            button.className = "";
-            button.innerHTML = getLessonDisplayName(lesson);
-        } else {
-            button.className = "locked";
-            button.innerHTML = getLessonDisplayName(lesson) + " 🔒";
+            className = "completed";
+            label += " ✅";
+        } else if (!isLessonUnlocked(lesson)) {
+            className = "locked";
+            label += " 🔒";
         }
+
+        html += "<button class='" + className + "' onclick='startLesson(\"" + lesson + "\")'>" + label + "</button>";
     }
+
+    lessonMenu.innerHTML = html;
 }
 
 function updateReviewMenu() {
@@ -457,17 +562,41 @@ function getLessonDisplayName(lesson) {
         electricity: "Electricity",
         magnetism: "Magnetism",
         acceleration: "Acceleration",
-        mass: "Mass"
+        mass: "Mass",
+        heat: "Heat",
+        waves: "Waves",
+        circuits: "Circuits",
+        light: "Light",
+        pressure: "Pressure"
     };
 
     return names[lesson];
 }
 
 function updateDashboard() {
+    let studentName = localStorage.getItem("name") || "Student";
+    let completionPercent = Math.round((completedLessons.length / lessonOrder.length) * 100);
+
     document.getElementById("levelBox").innerHTML = "Level: " + level + " | XP: " + xp + " / 100";
-    document.getElementById("completedBox").innerHTML = "Lessons Completed: " + completedLessons.length + " / 10";
+    document.getElementById("completedBox").innerHTML = "Lessons Completed: " + completedLessons.length + " / " + lessonOrder.length;
     document.getElementById("badgeCountBox").innerHTML = "Badges Earned: " + earnedBadges.length;
     document.getElementById("badges").innerHTML = earnedBadges.length ? earnedBadges.join("<br>") : "No badges yet.";
+
+    document.getElementById("reportName").innerHTML = "Student: " + studentName;
+    document.getElementById("reportLevel").innerHTML = "Level: " + level;
+    document.getElementById("reportXP").innerHTML = "XP: " + xp + " / 100";
+    document.getElementById("reportLessons").innerHTML = "Course Progress: " + completionPercent + "%";
+    document.getElementById("reportBadges").innerHTML = "Badges: " + earnedBadges.length;
+
+    if (completionPercent === 100) {
+        document.getElementById("reportMessage").innerHTML = "Excellent! You completed the full course.";
+    } else if (completionPercent >= 50) {
+        document.getElementById("reportMessage").innerHTML = "Great progress. Keep going.";
+    } else if (completionPercent > 0) {
+        document.getElementById("reportMessage").innerHTML = "Good start. Continue the learning path.";
+    } else {
+        document.getElementById("reportMessage").innerHTML = "Start Gravity to begin your learning path.";
+    }
 }
 
 function resetProgress() {
